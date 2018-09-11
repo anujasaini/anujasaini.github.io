@@ -1,0 +1,419 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="format-detection" content="telephone=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="twitter:card" content="player">
+<meta name="twitter:site" content="@marvelapp">
+
+<meta name="twitter:title" content="IITG Library Book Issuing App">
+<meta name="twitter:description" content="Marvel Prototype for IITG Library Book Issuing App">
+
+<meta name="twitter:player" content="https://marvelapp.com/aghbe7j?emb=1">
+<meta name="twitter:player:width" content="390">
+<meta name="twitter:player:height" content="779">
+<meta name="twitter:player:stream" content="https://marvelapp.com/aghbe7j?emb=1">
+<meta name="twitter:player:stream:content_type" content="image/jpeg">
+<meta property="og:title" content="IITG Library Book Issuing App">
+<meta property="og:image" content="https://marvelapp-live.storage.googleapis.com/serve/2017/11/692e7437bd34441a8c42bf4159094185.png">
+<meta property="og:site_name" content="Marvel Prototyping">
+<meta property="og:description" content="Marvel Prototype for IITG Library Book Issuing App">
+<script type="text/javascript" async="" src="aghbe7j_data/app_id.js"></script><script async="" src="analytics.js"></script><script type="text/javascript" src="aghbe7j_data/polyfill.js"></script>
+<link type="text/css" href="aghbe7j_data/prototype.css" rel="stylesheet">
+<script type="text/javascript">
+(function () {
+    // Define if this is offline
+    var offline = false;
+
+    var trackerReady;
+
+    
+        function initGoogleAnalytics() {
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-38711157-1', 'auto');
+          ga('send', 'pageview', "prototype-view");
+        }
+
+        function initIntercom() {
+          var w = window;
+          var ic = w.Intercom;
+          if (typeof ic === "function") {
+              ic('reattach_activator');
+              ic('update', intercomSettings);
+          } else {
+              var d = document;
+              var i = function () {
+                  i.c(arguments)
+              };
+              i.q = [];
+              i.c = function (args) {
+                  i.q.push(args)
+              };
+              w.Intercom = i;
+              function l() {
+                  var s = d.createElement('script');
+                  s.type = 'text/javascript';
+                  s.async = true;
+                  s.src = 'https://widget.intercom.io/widget/{app_id}';
+                  var x = d.getElementsByTagName('script')[0];
+                  x.parentNode.insertBefore(s, x);
+              }
+
+              if (w.attachEvent) {
+                  w.attachEvent('onload', l);
+              } else {
+                  w.addEventListener('load', l, false);
+              }
+          }
+        }
+
+        function initTracker() {
+          return fetch('/api/v1/integration/snippet/?project_id=2465382')
+            .then(function(response) {
+              if (!response.ok) {
+                return Promise.reject(response);
+              }
+              return response.json();
+            })
+            .then(function(response) {
+              var gaSnippet = response.snippets.filter(function(snippet) {
+                return snippet.provider === 'ga';
+              })[0];
+              if (!gaSnippet) {
+                return Promise.reject(response);
+              }
+              ga('create', gaSnippet.tracker_id, 'auto', 'marvelUserGATracker');
+            })
+            .catch(function(error){
+              // catching it so it does not create noise in the console
+            });
+        }
+
+        initGoogleAnalytics();
+        initIntercom();
+        trackerReady = initTracker();
+    
+
+    window.MARVELAPP = {
+      offline: offline,
+      projectId: "aghbe7j",
+      
+        projectConfig: {"last_active":"2017-11-21 10:15:57.390692","is_archived":false,"owner":{"username":"Akhil Patel","id":1404592,"avatar":{"url":"https://secure.gravatar.com/avatar/7d0f585b21139d4a50c9fccc6dc233e1?s=300&d=blank","colour":"#009EEB"},"company_id":null},"likes":0,"owner_fk":1404592,"images":{"1":{"preview_thumbnail":"https://res.cloudinary.com/marvel-content/image/fetch/s--iiN-RXhG--/f_auto,fl_lossy,q_100,t_width_320/https://marvelapp-live.storage.googleapis.com/serve/2017/11/692e7437bd34441a8c42bf4159094185.png","hotspots":[],"is_desktop":true,"seq":1,"source_platform_human":"Desktop","top_pixel_colour":"101, 109, 120, 1.0","height":1334,"source_platform":"4","es_canvas_id":null,"is_app_icon":false,"id":35167786,"size":10700,"uuid":"900df31c-76b6-48ca-d967-3bdb11a582d6","bright_pixel_colour":null,"width":750,"comment_count":0,"version":5,"hotspots_delta":"195e001167ca03d136c6b938426e7553","thumbnail":"https://res.cloudinary.com/marvel-content/image/fetch/s--YZO8M7Ad--/f_auto,fl_lossy,q_100,t_thumbnail_fill_320_568/https://marvelapp-live.storage.googleapis.com/serve/2017/11/692e7437bd34441a8c42bf4159094185.png","revision":null,"status":5,"preview_thumbnail_640":null,"description":null,"bottom_pixel_colour":"101, 109, 120, 1.0","content_type":"image/png","name":"app-icon.png","layer_sync_uri":"","url":"https://marvelapp-live.storage.googleapis.com/serve/2017/11/692e7437bd34441a8c42bf4159094185.png","layer_parent":null,"directory":null,"external_id":null,"status_pixel_colour":"101, 109, 120, 1.0"}},"team_name":null,"project_image":"https://res.cloudinary.com/marvel-content/image/fetch/s--YZO8M7Ad--/f_auto,fl_lossy,q_100,t_thumbnail_fill_320_568/https://marvelapp-live.storage.googleapis.com/serve/2017/11/692e7437bd34441a8c42bf4159094185.png","id":2465382,"published_time":"2017-11-21 09:10:33","team_fk":null,"pusher_channel":"private-project-production_2465382","uuid":"0352e90e-cc68-472e-ad9f-a08695d0c1a1","sync_started":null,"total_size":589713,"bright_pixel_colour":null,"team_icon":null,"state":1,"sequence_delta":"7a4c1c148b469e9d0a69c24d53c4de89","vanity_url":"https://marvelapp.com/aghbe7j","sync_ended":null,"version":1,"hotspots_delta":"f478aae9ec75acfe74bc55b43bd7b529","type":1,"owner_username":"Akhil Patel","explore_url":"https://marvelapp.com/explore/2465382/iitg-library-book-issuing-app","embed_url":"https://marvelapp.com/aghbe7j","description":"None","views":0,"es_canvas_id":null,"company":null,"num_images":14,"human_url":null,"pusher_public_channel":"prototype-production_2465382","isprivate":0,"project_base_image":"https://marvelapp-live.storage.googleapis.com/serve/2017/11/692e7437bd34441a8c42bf4159094185.png","password":null,"properties":[{"id":50411102,"name":"ui-prj-show-hints","value":"0","description":"Show hints on prototype","uuid":"18e5c35d-e1bc-437f-a1da-ea88c4d410ee","read_only":false},{"id":50411087,"name":"ui-prj-status-bar","value":"0","description":"Set status bar background colour","uuid":"8ae87b1a-ec54-4c7a-97e3-4812c345e7b3","read_only":false},{"id":50411088,"name":"prj-lookback-ever-enabled","value":"0","description":"Lookback ever been enabled for this project","uuid":"87e33f7c-5b5e-482c-b929-99f0c5bbf76c","read_only":true},{"id":50411086,"name":"prj-comments-ever-enabled","value":"1","description":"Comments have ever been enabled for this project","uuid":"c700a44c-f65e-4edf-88c3-6156657f12c8","read_only":true},{"id":50411099,"name":"prj-lookback-enabled","value":"0","description":"Enable Lookback for this project","uuid":"704683d9-4d2b-400e-8bd1-465534699158","read_only":false},{"id":50411090,"name":"ui-prj-responsive","value":"0","description":"Set images as responsive","uuid":"1fb27d8f-8983-4b8b-99b9-1f9bfc0a329e","read_only":false},{"id":50411091,"name":"ui-prj-thumbnail-width","value":"0","description":"Set thumbnail width for project view","uuid":"bcd071e6-f71b-4442-96ea-4e852311a3cb","read_only":false},{"id":50411095,"name":"ui-prj-retina-scale","value":"0","description":"Scale images to half their original width for retina images","uuid":"2c2ee59f-85e4-4671-90c1-ce0d2896be23","read_only":false},{"id":50411094,"name":"ui-prj-center-image","value":"0","description":"Center image instead of aligning left","uuid":"361269bb-0316-4488-a578-835f492c95db","read_only":false},{"id":50411089,"name":"ui-prj-background-hex","value":"FFFFFF","description":"Set background colour for prototype preview","uuid":"4df5130e-c11d-41f3-bffd-50f67c6c9fea","read_only":false},{"id":50411084,"name":"ui-prj-frame","value":"nexus5-frame","description":"Set phone frame","uuid":"a6a0cee6-989a-457f-83ae-682db237e4b3","read_only":false},{"id":50411096,"name":"ui-prj-prototype-background-hex","value":"FFFFFF","description":"Set background for prototype background","uuid":"7b307eb9-c18b-4732-b5df-a159325b15ef","read_only":false},{"id":50411097,"name":"ui-prj-disable-swipe","value":"1","description":"Disable prototype swipes","uuid":"8a86c49d-291b-4584-bf32-a56a1a99c14c","read_only":false},{"id":50411098,"name":"ui-prj-center-overflow","value":"0","description":"Center images and hide overflow on non-responsive images","uuid":"86ccb643-2dc7-456f-b3e4-c8b736c385d7","read_only":false},{"id":50411092,"name":"ui-prj-remove-status","value":"0","description":"Removes status bar on project","uuid":"6bfe44f9-ed42-4363-8759-03dd979b2c8b","read_only":false},{"id":50411100,"name":"ui-prj-disable-frame","value":"0","description":"New site features for user","uuid":"491431c1-fae2-4361-bbd7-e9888c37c75d","read_only":false},{"id":50411085,"name":"prj-comments-enabled","value":"1","description":"Enable comments for this project","uuid":"2e0ff159-5ab0-457f-9a1e-71117c48a7ac","read_only":false},{"id":50411104,"name":"ui-prj-frame-colour","value":"black","description":"Set phone colour","uuid":"07532040-b757-4a99-995b-8675ed6e3ca7","read_only":false},{"id":50411101,"name":"ui-prj-orientation","value":"portrait","description":"Set phone orientation","uuid":"a338bb33-d9ad-4b58-bed8-59d4e218932e","read_only":false},{"id":50411103,"name":"ui-prj-explore-background-hex","value":"#000000","description":"Set background colour for explore view","uuid":"98688536-cc93-4b19-8ac0-cac70cb10dcd","read_only":false}],"app_icon":null,"canvas_images":[],"is_deleted":false,"name":"IITG Library Book Issuing App","date_modified":"2018-01-13 07:24:39.700140","pusher_anon_channel_prefix":"anon-production","cursor":"","team_uri":null,"published":false,"is_syncing":0,"date_created":"2017-11-21 09:10:09","is_pro":false,"resource_uri":"/project/2465382/"},
+        settings: {"CANVAS_EASEL_HOST": "https://easel.marvelapp.com", "DISALLOWED_FILENAME_CHARACTERS": "\\\"<>=", "PROTOTYPE_SENTRY_DSN": "https://883389dfaa2349e891ef7b4f0a6cec51@sentry.io/96884", "PUSHER": {"PROTOTYPE_CHANNEL_PREFIX": "prototype-production_", "PROJECT_CHANNEL_PREFIX": "private-project-production_", "ANON_CHANNEL_PREFIX": "anon-production_", "EXPLORE_CHANNEL_PREFIX": "explore-production_", "USER_CHANNEL_PREFIX": "private-user-production_"}, "MARVEL_CORS_PROXY": "https://marvelapp.com/proxy/", "MIXPANEL_TOKEN": "e12a882f7a6eaf4730758a8a61ac2501", "BASE_URL": "https://marvelapp.com", "STRIPE_PUBLISHABLE": "pk_live_1afBzKMbfYd1vhu8lsneB1Zb", "SITE_SENTRY_DSN": "https://3fad520e195b4e168ceb79d16cbce216@app.getsentry.com/38273", "APP_SENTRY_DSN": "https://873a8ca087a0492d8d22b808d6931306@sentry.io/97119", "REVISION": "r0164", "INTERCOM_APP_ID": "9afe6b55dbac3807f4bc7ebcdf1fc0470c2454f1", "BOX_COM_CLIENT_ID": "wo18m8uju79g09r64gf5r7xm59xf6zif", "GOOGLE_CLIENT_ID": "308573482263-ddask8oq90fg9n9o5t6ub8190v5nqvta.apps.googleusercontent.com", "CANVAS_TOKEN_PROVIDER_HOST": "", "ENVIRONMENT": "live"},
+        currentUser: {},
+      
+      iOSApp: 0,
+      role: "Client",
+
+      trackAsync: function(location, screenName) {
+        
+            trackerReady.then(function() {
+                ga('marvelUserGATracker.send', 'pageview', {
+                    page: location.pathname + screenName,
+                    title: screenName
+                });
+            });
+        
+      }
+    };
+})();
+</script>
+<style type="text/css"></style><style type="text/css">@keyframes resizeanim { from { opacity: 0; } to { opacity: 0; } } .resize-triggers { animation: 1ms resizeanim; visibility: hidden; opacity: 0; } .resize-triggers, .resize-triggers > div, .contract-trigger:before { content: " "; display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden; } .resize-triggers > div { background: #eee; overflow: auto; } .contract-trigger:before { width: 200%; height: 200%; }</style><title>IITG Library Book Issuing App</title><link href="https://marvelapp.com/static/apple-touch-icon-4.769b1826c5190382248925acfd6bc7da.png" rel="apple-touch-icon" data-react-helmet="true"><link href="https://marvelapp.com/static/apple-touch-icon-4.769b1826c5190382248925acfd6bc7da.png" rel="icon" data-react-helmet="true"><link href="https://marvelapp.com/static/favicon.fcc1c1ce0c1f9a5fc40a597379ebe6ff.png" rel="shortcut icon" type="image/png" data-react-helmet="true"><meta name="apple-mobile-web-app-status-bar-style" content="black" data-react-helmet="true"></head>
+<body>
+<div id="prototype"><div data-reactroot=""><div id="marvel-prototype-viewer" class="height-100" style="transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;"><div class="height-100 position-relative"><!-- react-empty: 4 --><!-- react-empty: 5 --><!-- react-empty: 6 --><!-- react-empty: 7 --><!-- react-empty: 8 --><div class="Project__project___3KZeN height-100 width-100"><div class="height-100" id="marvel-prototype-resize-root" style="position: relative;"><div class="Device__deviceWrapper___2oPKn" style="background-color: transparent;"><div class="Device__device___10K_k Device__nexus5-frame___20Shg Device__nexus5-frame-portrait___JggD-" style="width: 254.744px; height: 452.967px; padding: 61.2979px 17.5137px 70.0547px 15.9215px;"><div class="Device__deviceScreenBorder___QgTTP" style="width: 254.744px; height: 452.967px;"><div><!-- react-empty: 34 --><div class="Player__player___1Cqud" style="background-color: rgb(255, 255, 255);"><div style="background-color: rgb(101, 109, 120); height: 0px;"></div><div class="PreviewScreen__preview___2nEm5 position-absolute pinAll" style="background-image: url(&quot;https://marvelapp-live.storage.googleapis.com/serve/2017/11/692e7437bd34441a8c42bf4159094185.png&quot;); background-size: 255px 454px; background-position: 50% 0px;"><div class="PlayButton__position___2zDiu cursor-pointer padding-m pinAll position-absolute textAlign-center"><div class="PlayButton__table___1om7F display-table height-100 width-100"><div class="PlayButton__cell___2xxIR display-tableCell verticalAlign-middle"><div class="PlayButton__box___2Fw_6 borderRadius-l c-white centered transitionDuration-m transitionTimingFunction-ease-in-out PlayButton__fontBig___2o16f fontSize-xl lineHeight-l padding-m"><div class="PlayButton__icon___2kTCw fill-white paddingBottom-s paddingTop-xs"><svg class="display-block centered" width="40" height="52" viewBox="0 0 40 52"><path d="M26.64,16.27a1.53,1.53,0,0,1-1.82-1.14,7.28,7.28,0,0,0-.91-2.39A8.58,8.58,0,0,0,12.5,9.41,8.05,8.05,0,0,0,9.77,20.66a8.67,8.67,0,0,0,1.69,2,1.45,1.45,0,0,1,.07,2.1,1.56,1.56,0,0,1-2.16.07,11.66,11.66,0,0,1-2.25-2.67A11,11,0,0,1,11,6.84a11.69,11.69,0,0,1,15.59,4.41,10.2,10.2,0,0,1,1.25,3.26,1.47,1.47,0,0,1-.73,1.59,1.57,1.57,0,0,1-.45.17ZM12.9,29.92a1.54,1.54,0,0,1-1.95.91,16.3,16.3,0,0,1-8.76-7.07,15.61,15.61,0,0,1,6-21.64,16.63,16.63,0,0,1,22.31,5.8A15.86,15.86,0,0,1,32.4,18.81a1.48,1.48,0,0,1-.74,1,1.57,1.57,0,0,1-1,.17,1.49,1.49,0,0,1-1.23-1.73A12.93,12.93,0,0,0,27.82,9.4,13.51,13.51,0,0,0,9.69,4.69,12.68,12.68,0,0,0,4.84,22.28,13.25,13.25,0,0,0,12,28,1.47,1.47,0,0,1,12.9,29.92Zm14.89,1.3L36.94,46.6,32.6,49,23.45,33.65l-5.08,7.41L15.3,14.13,36.93,30.66ZM17.2,11.79a3.14,3.14,0,0,0-3.38-.26l0,0a3,3,0,0,0-1.51,2.9l3.06,26.93a3,3,0,0,0,2.32,2.56,3.15,3.15,0,0,0,2.26-.31,3,3,0,0,0,1-.93l2.35-3.42L30,50.52a3.12,3.12,0,0,0,4.18,1.09l4.33-2.43a2.92,2.92,0,0,0,1.12-4.06L32.91,33.89l4.22-.26a3.12,3.12,0,0,0,1.34-.39,3,3,0,0,0,1.39-1.69,2.92,2.92,0,0,0-1-3.22L17.2,11.79Z"></path></svg></div><div style="opacity: 1;">Click anywhere to interact with this prototype</div></div></div></div></div></div></div><!-- react-empty: 31 --></div></div></div></div><a class="MadeWithMarvel__madeWithMarvel___39lLt zi-500" href="https://marvelapp.com/" target="_parent">Made with Marvel</a><div class="resize-triggers"><div class="expand-trigger"><div style="width: 799px; height: 600px;"></div></div><div class="contract-trigger"></div></div></div><div class="SidebarHandoff__handoffSidebar___3Ojdd position-fixed pinTR overflowY-scroll bg-white borderWidth-0 borderLeftWidth-1 borderStyle-solid borderColor-snow--xd fontSize-s" style="width: 301px;"><div class="SidebarHandoff__iconClose___2Ev5k modal-icon modal-icon--s modal-icon--light modal-iconClose--outside modal-iconClose zi-100"></div></div></div></div></div></div><div class="modal-overlay zIndex-Overlay cf" id="signin-modals" style="background-color: white">
+  
+
+  
+      <div class="width-100 height-100 position-relative">
+      
+      <div class="js-signin-modal modal-container height-100 concealed" id="signin">
+        <div class="display-table width-100 height-100 position-relative">
+          <div class="display-tableCell width-50 verticalAlign-middle padding-m">
+            <div class="paddingTopBottom-xl">
+              <div class="modal centered breakPointS-paddingLeftRight-xs" style="max-width: 440px">
+                <div class="marginTop-s marginBottom-xs breakPointS-marginTop-0">
+                  <h3 class="c-slate lineHeight-l fontSize-l fontWeight-4 textAlign-center breakPointS-fontSize-xl">
+                    Good afternoon! Welcome back.
+                  </h3>
+                </div>
+
+                <div class="marginBottom-l textAlign-center">
+                  <span class="fontSize-m fontWeight-3 c-silver">
+                    Sign into your account here:
+                  </span>
+                </div>
+
+                
+
+                
+                    <form id="sign-in" method="post">
+                    
+                    <input name="invite-code" value="" type="hidden">
+
+                    <input name="invite-team" value="" type="hidden">
+
+                    <div class="marginBottom-m email">
+                      <div class="width-100 uiIcon uiIcon--l">
+                        
+                          <input class="width-100 input input--default input--l" spellcheck="false" name="signin-email" placeholder="Email address" type="email">
+                        
+
+                        <svg class="svgIcon fill-smoke--d" width="30" height="30" viewBox="0 -6 30 30" enable-background="new 0 -6 30 30">
+                          <path d="M15 11.9c-.9 0-1.7-.2-2.3-.7l-5.7-4.4v8.1c0 .1 0 .3.1.4.1.1.2.2.3.2 2.5.4 5 .5 7.5.5s5-.2 7.5-.5c.1 0 .3-.1.4-.2.2-.1.2-.3.2-.4v-8.1l-5.7 4.4c-.6.5-1.4.7-2.3.7zm-1.3-2.3c.3.3.8.4 1.3.4s1-.1 1.3-.4l6.1-4.7c.3-.3.5-.6.6-1v-.8c0-.1 0-.3-.1-.4-.1-.1-.2-.2-.4-.2-2.5-.3-5-.5-7.5-.5s-5 .2-7.5.5c-.1 0-.2.1-.3.2-.2.1-.2.3-.2.4v.9c.1.3.3.6.6 1l6.1 4.6z"></path>
+                        </svg>
+                      </div>
+
+                      <div class="error textAlign-center"></div>
+                    </div>
+
+                    <div class="marginBottom-s password">
+                      <div class="width-100 uiIcon uiIcon--l">
+                        <input class="width-100 input input--default input--l" spellcheck="false" name="signin-password" placeholder="Password" type="password">
+
+                        <svg class="svgIcon fill-smoke--d" width="30" height="30" viewBox="0 -6 30 30" enable-background="new 0 -6 30 30">
+                          <path d="M21.6 8.3c-.2-.2-.5-.3-.9-.3h-.7v-2.6c0-1.3-.5-2.4-1.4-3.2-.9-.8-2.1-1.2-3.6-1.2s-2.7.4-3.6 1.2c-.9.8-1.4 1.9-1.4 3.2v2.6h-.7c-.3 0-.7.1-.9.4-.3.2-.4.5-.4.8v6.1c0 .3.1.5.3.7.2.2.4.3.7.4 1.9.4 3.9.6 6 .6 2 0 4-.2 5.9-.6.3-.1.5-.2.7-.4.2-.2.3-.4.3-.7v-6.1c.1-.3 0-.6-.3-.9zm-8.6-2.4c0-1.3.7-1.9 2-1.9s2 .6 2 1.9v2.1h-4v-2.1z"></path>
+                        </svg>
+                      </div>
+
+                      <div class="error textAlign-center"></div>
+                    </div>
+
+                    <div class="marginBottom-m textAlign-center breakPointS-textAlign-right">
+                      <span class="forgot-password link link--light fontWeight-3">
+                        Forgotten password?
+                      </span>
+                    </div>
+
+                    <div>
+                      <button id="login-button" type="submit" class="width-100 button button--l button--flat bg-green c-white">
+                        Sign in
+                      </button>
+                    </div>
+                  </form>
+
+                  
+                </div>
+
+                
+                  <div class="modal-subtext modal-subtext--after modal-subtext--showMobile display-none">
+                    <span class="c-silver fontWeight-3">Don't have an account?
+                    </span>
+                    <a class="js-signup-link link link--blue">Sign up</a>.
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+
+          
+            <div class="modal-subtext--hideMobile position-absolute pinBL width-100 paddingLeftRight-xl paddingBottom-xl textAlign-center">
+              <div class="modal-subtext modal-subtext--after">
+                <span class="c-silver fontWeight-3">Don't have an account?
+                </span>
+                <a class="js-signup-link link link--blue">Sign up</a>.
+              </div>
+            </div>
+          
+        </div>
+
+        <div class="js-signup-modal modal-container height-100 concealed" id="signup">
+          <div class="modal-subtext--hideMobile position-absolute pinBL width-100 paddingLeftRight-xl paddingBottom-xl textAlign-center">
+            <div class="modal-subtext modal-subtext--after">
+              <div class="fontSize-m fontWeight-3 lineHeight-l c-silver">
+                
+
+                
+                  <div>
+                    Already have an account?
+                    <a class="js-signin-link switch link link--blue">Sign in</a>.
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="display-table width-100 height-100">
+            <div class="display-tableCell verticalAlign-middle padding-m">
+              <div class="paddingTopBottom-xl">
+                <div class="modal modal--s breakPointS-paddingLeftRight-xs" style="max-width: 440px">
+                  <div class="marginTop-s marginBottom-xs breakPointS-marginTop-0">
+                    <h3 class="c-slate lineHeight-l fontSize-l fontWeight-4 textAlign-center breakPointS-fontSize-xl">
+                      Enter your details to leave a comment
+                    </h3>
+                  </div>
+
+                  <div class="marginBottom-l">
+                    <p class="fontSize-m fontWeight-3 lineHeight-m textAlign-center c-silver">
+                      We'll keep you in the loop when the conversation is updated.
+                    </p>
+                  </div>
+
+                  <form id="sign-up" method="post">
+                    <input name="invite-code" value="" type="hidden">
+                    <input name="invite-team" value="" type="hidden">
+
+                    <div class="js-global-error bg-red borderRadius-m c-white fontSize-m lineHeight-m textAlign-center"></div>
+
+                    <div class="marginBottom-m name">
+                      <div class="width-100 uiIcon uiIcon--l">
+                        <input class="width-100 input input--default input--l" spellcheck="false" name="signup-name" placeholder="Your full name" type="text">
+                        <svg class="svgIcon fill-smoke--d" width="30" height="30" viewBox="0 -6 30 30" enable-background="new 0 -6 30 30">
+                          <path d="M22.9 16.2c.1-.1.1-.3.1-.4-.2-.8-.5-1.4-.9-1.9s-1-1-1.7-1.4c-.2-.1-.6-.3-1.3-.6-.6-.2-1.1-.4-1.4-.6-.3-.2-.6-.4-.7-.7-.1-.4.1-1 .5-1.7 1.5-2.3 1.8-4.3.8-5.9-.3-.6-.7-1.1-1.3-1.5-.6-.3-1.3-.5-2-.5s-1.4.2-2 .5c-.6.4-1.1.8-1.5 1.5-1 1.6-.7 3.6.8 5.9.5.7.7 1.3.5 1.7-.1.2-.2.4-.5.6-.2.2-.5.3-.7.4-.2.1-.5.2-.9.4-.6.3-1.1.4-1.3.6-.7.4-1.3.9-1.7 1.4-.2.4-.5 1-.7 1.8 0 .1 0 .3.1.4l.3.3c1.6.3 4.1.5 7.6.5 2.3 0 4.2-.1 5.8-.3.2 0 .4 0 .6-.1.2 0 .4-.1.5-.1l.3-.1h.30000000000000004c.2 0 .3-.1.4-.2z"></path>
+                        </svg>
+                      </div>
+                      <div class="error textAlign-center"></div>
+                    </div>
+
+                    <div class="marginBottom-m email">
+                      <div class="width-100 uiIcon uiIcon--l">
+                        
+                          <input class="width-100 input input--default input--l" spellcheck="false" name="signup-email" placeholder="Email address" type="email">
+                        
+
+                        <svg class="svgIcon fill-smoke--d" width="30" height="30" viewBox="0 -6 30 30" enable-background="new 0 -6 30 30">
+                          <path d="M15 11.9c-.9 0-1.7-.2-2.3-.7l-5.7-4.4v8.1c0 .1 0 .3.1.4.1.1.2.2.3.2 2.5.4 5 .5 7.5.5s5-.2 7.5-.5c.1 0 .3-.1.4-.2.2-.1.2-.3.2-.4v-8.1l-5.7 4.4c-.6.5-1.4.7-2.3.7zm-1.3-2.3c.3.3.8.4 1.3.4s1-.1 1.3-.4l6.1-4.7c.3-.3.5-.6.6-1v-.8c0-.1 0-.3-.1-.4-.1-.1-.2-.2-.4-.2-2.5-.3-5-.5-7.5-.5s-5 .2-7.5.5c-.1 0-.2.1-.3.2-.2.1-.2.3-.2.4v.9c.1.3.3.6.6 1l6.1 4.6z"></path>
+                        </svg>
+                      </div>
+
+                      <div class="error textAlign-center"></div>
+                    </div>
+
+                    
+                      <button id="create-account" type="submit" class="width-100 button button--l button--flat bg-blue display-block">
+                        Leave comment
+                      </button>
+                    
+                  </form>
+                </div>
+
+                <div class="modal-subtext modal-subtext--after modal-subtext--showMobile display-none">
+                  <div class="fontSize-m fontWeight-3 lineHeight-l c-silver">
+                    
+
+                    
+                      <div>
+                        Already have an account?
+                        <a class="js-signin-link switch link link--blue">Sign in</a>.
+                      </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-container height-100 concealed" id="forgot-password">
+          <div class="display-table width-100 height-100">
+            <div class="display-tableCell verticalAlign-middle padding-m">
+              <div class="paddingTopBottom-xl">
+                <div class="modal modal--s breakPointS-paddingLeftRight-xs" style="max-width: 440px">
+                  <form id="reset-password-form" class="transitionDuration-s transitionPropety-all" method="post">
+                    <div class="marginTop-m marginBottom-xs breakPointS-marginTop-0">
+                      <h3 class="c-slate lineHeight-l fontSize-l fontWeight-4 textAlign-center breakPointS-fontSize-xl">
+                        Forgot your password?
+                      </h3>
+                    </div>
+
+                    <div class="marginBottom-l">
+                      <p class="fontSize-m fontWeight-3 lineHeight-m textAlign-center c-silver">
+                        We'll email you instructions on how to reset it.
+                      </p>
+                    </div>
+
+                    <div class="marginBottom-m email">
+                      <div class="width-100 uiIcon uiIcon--l">
+                        
+                          <input class="width-100 input input--l input--default" spellcheck="false" name="forgot-email" placeholder="Email address" type="email">
+                        
+
+                        <svg class="svgIcon fill-smoke--d" width="30" height="30" viewBox="0 -6 30 30" enable-background="new 0 -6 30 30">
+                          <path d="M15 11.9c-.9 0-1.7-.2-2.3-.7l-5.7-4.4v8.1c0 .1 0 .3.1.4.1.1.2.2.3.2 2.5.4 5 .5 7.5.5s5-.2 7.5-.5c.1 0 .3-.1.4-.2.2-.1.2-.3.2-.4v-8.1l-5.7 4.4c-.6.5-1.4.7-2.3.7zm-1.3-2.3c.3.3.8.4 1.3.4s1-.1 1.3-.4l6.1-4.7c.3-.3.5-.6.6-1v-.8c0-.1 0-.3-.1-.4-.1-.1-.2-.2-.4-.2-2.5-.3-5-.5-7.5-.5s-5 .2-7.5.5c-.1 0-.2.1-.3.2-.2.1-.2.3-.2.4v.9c.1.3.3.6.6 1l6.1 4.6z"></path>
+                        </svg>
+                      </div>
+                      <div class="error textAlign-center"></div>
+                    </div>
+
+                    <div>
+                      <button id="reset-password" type="submit" class="width-100 button button--l button--flat bg-blue">
+                        Reset password
+                      </button>
+                    </div>
+                  </form>
+
+                  <div id="forgot-success" class="position-absolute pinAll borderRadius-l transitionDuration-s transitionPropety-all concealed">
+                    <div class="display-table width-100 height-100">
+                      <div class="display-tableCell verticalAlign-middle">
+                        <div class="marginBottom-m">
+                          <div class="position-relative bg-green borderRadius-circle centered" style="width:100px; height:100px">
+                            <svg class="display-block position-absolute pinCenter fill-white" width="50" height="38" viewBox="0 0 50 38" enable-background="new 0 0 50 38"><path d="M13.9 36.7l-12.2-11.7c-2.3-2.2-2.3-5.7 0-7.9l.1-.1c2.3-2.2 6-2.2 8.3 0l7 6.8 22.8-22.2c2.3-2.2 6-2.2 8.3 0l.1.1c2.3 2.2 2.3 5.7 0 7.9l-27.9 27c-1.8 1.8-4.7 1.8-6.5.1"></path></svg>
+                          </div>
+                        </div>
+
+                        <div class="marginBottom-xs">
+                          <h3 class="c-slate fontSize-l fontWeight-4 textAlign-center">
+                            Password reset sent!
+                          </h3>
+                        </div>
+
+                        <div class="paddingLeftRight-xl">
+                          <p class="fontSize-m fontWeight-3 lineHeight-m textAlign-center c-silver">
+                            We've just emailed you instructions on how to reset your password.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="textAlign-center modal-subtext modal-subtext--after modal-subtext--showMobile display-none">
+                  <div class="fontSize-m fontWeight-3 lineHeight-l c-silver">
+                    <div>
+                      Already have an account?
+                      <a class="js-signin-link switch link link--blue">Sign in</a>.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="position-absolute pinBL width-100 padding-xl textAlign-center modal-subtext--hideMobile">
+            <div class="textAlign-center modal-subtext modal-subtext--after">
+              <div class="fontSize-m fontWeight-3 lineHeight-l c-silver">
+                <div>
+                  Already have an account?
+                  <a class="js-signin-link switch link link--blue">Sign in</a>.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-icon-wrapper">
+          <div class="position-absolute pinTL width-100 padding-l textAlign-center pointerEvents-none">
+            <svg class="fill-blue" width="70" height="30" viewBox="0 0 70 30">
+              <path d="M59.439 19.41c-25.462-1.95-46.514 4.12-51.222 6.37-2.625 1.2-2.809 2.7-2.432 3.529.341.635 1.592 1.006 2.966.335 10.106-5.399 30.554-9.705 50.697-8.47.483-.002.873-.399.871-.887-.002-.487-.396-.88-.879-.878zm6.309-7.57c-1.067 1.2-2.625 2.1-3.115 1.65-.49-.45 0-1.87 0-1.87 2.502-1.615 7.367-5.735 7.367-8.884 0-2.92-2.625-3.82-5.399-1.12-2.244 2.413-3.863 5.346-4.716 8.54-1.444 1.42-3.727 3.22-5.775 3.22-1.067 0-1.365-.75-1.216-1.765 1.75-.026 6.606-1.376 6.606-5.435-.007-.678-.294-1.322-.793-1.778-.498-.455-1.162-.681-1.832-.622-2.205 0-5.014 2.25-6.387 5.399-.375-.07-.74-.189-1.085-.353.359-.773.652-1.576.875-2.4.306-1.65-.376-2.7-1.75-2.55-.875.071-1.899.821-2.126 2.55-.092.876.066 1.761.455 2.55-.604 1.87-3.036 4.2-3.876 4.12-.84-.079.114-3.388.954-5.858.46-.474.823-1.035 1.067-1.65.235-.481.072-1.063-.376-1.35-1.251-.457-2.64.13-3.194 1.35-.334.602-.627 1.227-.875 1.87-.682.821-1.75 1.87-2.056 1.765-.455-.3 1.067-2.32.875-3.45-.136-.93-.971-1.59-1.899-1.5-1.374.194-3.194 2.788-3.194 2.788.214-.473.341-.981.376-1.5-.079-.97-1.899-1.42-2.809.371-.623 1.716-1.081 3.489-1.365 5.294-.376.821-1.899 3.22-3.115 3.3-.989.071.227-4.27.376-4.5.534-.821 1.216-2.55 1.067-3.3.013-.364-.15-.712-.436-.935-.286-.222-.662-.292-1.008-.186-.612.161-1.133.565-1.444 1.12-.437-.546-1.137-.803-1.82-.671-4.042.432-6.606 7.402-6.317 10.711.227 1.765 1.067 2.85 2.625 2.647 1.75-.221 3.194-2.77 3.194-2.77s.376 2.1 2.284 1.87c1.413-.436 2.659-1.298 3.57-2.47-.044.119-.071.244-.079.371-.306 1.765 2.625 1.57 2.887.221.875-6.67 3.115-9.44 3.797-9.44.534 0-1.444 3.15-.306 4.35.875 1.05 2.432.221 3.727-.882-.226.832-.352 1.688-.376 2.55-.079 1.87.604 3.37 2.432 3.3 2.432-.071 5.014-3.07 6.685-5.92.44.289.929.493 1.444.6-.174.667-.239 1.359-.192 2.047.149 2.17 1.671 3 3.421 2.92 2.056-.071 4.48-1.65 6.125-3.07.008.082-.021.163-.079.221-.149 1.05.079 3 1.592 3.07 1.75.15 4.786-1.65 6.309-3.529 1.094-.812-.192-2.012-1.102-1.041v.035zm1.627-9.026c.185.019.321.183.306.371 0 1.87-4.716 5.849-4.716 5.849s3.08-6.22 4.41-6.22zm-11.375 3.891c.157-.014.311.047.416.165.105.118.149.279.118.435 0 1.05-1.444 1.87-3.036 1.87.849-1.235 1.837-2.47 2.502-2.47zm-31.499 2.929c-.149 1.12-2.126 6.176-3.194 6.176-1.365.071.682-7.12 2.887-7.058.429-.018.429.282.306.882zm-17.123 1.35c1.295 0-1.067 6.67-.761 9.59.306 2.92 3.57 2.1 3.342.371-.376-2.85 1.592-11.919 3.57-11.919 1.444 0-1.592 6.22-.989 10.12.376 2.55 3.876 1.765 3.5.15-1.067-5.091 2.511-10.04 2.047-13.631-.227-1.5-1.067-2.32-2.056-2.32-3.272 0-5.932 6.591-5.932 6.591s.315-3.758-2.345-3.9c-3.876-.229-7.831 9.37-7.752 18.06.079 2.77 3.57 2.32 3.342.071-.227-3.873 2.056-13.181 4.034-13.181z"></path>
+            </svg>
+          </div>
+
+          
+            <div class="js-close-modal modal-icon modal-icon--light modal-iconClose"></div>
+          
+        </div>
+      </div>
+    </div>
+</div>
+<script type="text/javascript" src="aghbe7j_data/common-bundle.js"></script>
+<script type="text/javascript" src="aghbe7j_data/prototype-bundle.js"></script><div style="display: none;"><img src="aghbe7j_data/692e7437bd34441a8c42bf4159094185.png"><img src="aghbe7j_data/692e7437bd34441a8c42bf4159094185.jpeg"><img src="aghbe7j_data/692e7437bd34441a8c42bf4159094185.png"><img src="aghbe7j_data/692e7437bd34441a8c42bf4159094185.jpeg"></div>
+
+
+<iframe id="intercom-frame" style="display: none;"></iframe><div id="intercom-container" style="position: fixed; width: 0px; height: 0px; bottom: 0px; right: 0px; z-index: 2147483647;"><!-- react-empty: 1 --></div></body></html>
